@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 1)   Generar una función llamada "muestraLog" en donde le pasarás dos parámetros: 
+                tipoLog y mensaje. Si el tipoLog es 1 mostrarás console.log; si es 2, console.warn y
+                si es 3, console.error. Y dentro del console la leyenda con el mensaje pasado.
+        const muestrLog = (tipoLog, mensaje) => {
+            switch (tipoLog){
+                case 1: console.log(mensaje);
+                break;
+                case 2: console.warn(mensaje);
+                break;
+                default:  console.error(mensaje);
+            }
+        }
+
+        muestrLog(2, "Piza")
+        */
+
+        /*
+        2)  Modificá el punto anterior para que solo puedan ingresar como primer parámetro un número
+            entre el 1 y el 3, si usan otro deben mostrar con console.error "Ingresá un tipo de log válido".
+        
+        
+        
+            const muestrLog = (tipoLog, mensaje) => {
+                if (typeof tipoLog !== "number" ){
+                    console.log("El primer parámetro debe ser un number")
+                }else{
+                    if(tipoLog < 1 || tipoLog >3 ){
+                        console.log("Ingresá un tipo de log válido")
+                    }else{
+                        switch (tipoLog){
+                            case 1: console.log(mensaje);
+                            break;
+                            case 2: console.warn(mensaje);
+                            break;
+                            default:  console.error(mensaje);
+                        }
+                    }
+                }
+            }
+            
+            muestrLog(5, "Piza")
+        */
+
+        /*
+            3) Crea una función llamada mostrarValoresDelVector en donde le pasarás un vector y mostrarás
+            por console.log todos los valores contenidos en el vector.
+            const mostrarValoresDelVector = (vector) => {
+                for(let i = 0; i < vector.length; i++ ){
+                    console.log(vector[i])
+                }
+            }  
+        */
+
+
+        /*
+            4) Crea la función mostraMayorValorDelVector, en donde le pasarás un vector con valores numéricos.
+            Procesará los mismos y, por consola, mostrará al mayor de todos.
+            
+            const mostraMayorValorDelVector = (vector) => {
+                let max;
+                max = vector[0];
+                for(let i = 1; i < vector.length; i++ ){
+                    if(max < vector[i]){
+                        max = vector[i]
+                    }
+                }
+                console.log(max)
+        }
+        
+        const vec = [99,5,1,2,98,3,43];
+        
+        mostraMayorValorDelVector(vec)
+        */
+
+        /*
+        5)  Crea la función agregaFiambre. Por dentro, esta función pedirá por prompt un fiambre y 
+            lo agregará al vector de fiambres. Irá agregándolos hasta que ingreses la palabra FIN.
+            Una vez finalizada la carga listá los fiambres.
+            const mostrarValoresDelVector = (vector) => {
+                for(let i = 0; i < vector.length; i++ ){
+                    console.log(vector[i])
+                }
+            }  
+            const agregaFiambre = () => {
+                const vecFiambres = [];
+                do{
+                    nuevoFiambre = prompt("Ingresá un nuevo fiambre")
+                    if(nuevoFiambre!=="FIN"){
+                        vecFiambres.push(nuevoFiambre)
+                    }
+                }while(nuevoFiambre!=="FIN")
+                mostrarValoresDelVector(vecFiambres)
+            }
+            
+            agregaFiambre()
+        */
+            
+        /*
+        6) Modificá agregaFiambre:
+            a) Si escribe FIN entonces debes preguntar si realmente querés dejar de cargar valores.
+            Si escribís "SI" entonces dejará cargarlos. Si escribis otra cosa, nuevamente te pedirá un fiambre.
+            b) Si ingresa alguna de los siguientes valores "Tomate", "Quinoa", "Asado" que NO tome en cuenta
+            la carga, te salga por alert la leyenda "No es un fiambre" y vuelva a pedirte un fiambre nuevo.
+            */
+
+        const mostrarValoresDelVector = (vector) => {
+                for(let i = 0; i < vector.length; i++ ){
+                    console.log(vector[i])
+                }
+            }  
+            const agregaFiambre = () => {
+                const vecFiambres = [];
+                do{
+                    nuevoFiambre = prompt("Ingresá un nuevo fiambre")
+                    if(nuevoFiambre!=="FIN"){
+                        if(nuevoFiambre==="Asado"||nuevoFiambre==="Quinoa" || nuevoFiambre==="Tomate"){
+                            console.log("No es un fiambre")
+                        }else{
+                            vecFiambres.push(nuevoFiambre)
+                        }
+                    }else{
+                        let dejaCargar = prompt("Realmente queres dejar de cargar valores?")
+                        if(dejaCargar !== "SI") {
+                            nuevoFiambre=""
+                        }
+                    }
+                }while(nuevoFiambre!=="FIN")
+                mostrarValoresDelVector(vecFiambres)
+            }
+            
+            agregaFiambre()
+        </script>
+</body>
+</html>
